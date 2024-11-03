@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Mood</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>How are you feeling today?</h1>
+        <div class="mood-buttons">
+            <button class="mood-btn happy" data-mood="happy">Happy</button>
+            <button class="mood-btn sad" data-mood="sad">Sad</button>
+            <button class="mood-btn excited" data-mood="excited">Excited</button>
+            <button class="mood-btn calm" data-mood="calm">Calm</button>
+            <button class="mood-btn angry" data-mood="angry">Angry</button>
+            <button onclick="selectRandomSong()" class="mood-btn random">Get Random Song</button>
+        </div>
+        <a href="bug-report.html" class="bug-report">Report a bug</a>
+        <input type="text" id="secretCode" class="secret-input" onchange="checkSecret(this.value)" placeholder="...">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

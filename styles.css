@@ -1,0 +1,583 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f0f2f5;
+
+    min-height: 100vh;
+
+    transition: background 0.5s ease;
+
+}
+
+
+
+.container {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(5px);
+
+    border-radius: 15px;
+
+    margin-top: 2rem;
+
+    min-height: 90vh;
+
+    position: relative;
+
+    padding-bottom: 4rem;
+
+}
+
+
+
+.player-page h1 {
+
+    color: #29e451;
+
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+h1 {
+
+    margin-bottom: 2rem;
+
+    color: #29e451;
+
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+.login-btn, .back-btn {
+
+    padding: 1rem 2rem;
+
+    font-size: 1.2rem;
+
+    background-color: #29e451;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+
+}
+
+
+
+.login-btn:hover, .back-btn:hover {
+
+    background-color: #1ed760;
+
+}
+
+
+
+.mood-buttons {
+
+    display: grid;
+
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+}
+
+
+
+.mood-btn {
+
+    padding: 1rem;
+
+    font-size: 1.1rem;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s;
+
+    color: white;
+
+}
+
+
+
+.mood-btn:hover {
+
+    transform: scale(1.05);
+
+    background-color: #1ed760;
+
+}
+
+
+
+.happy { background-color: #1DB954; }
+
+.sad { background-color: #1DB954; }
+
+.excited { background-color: #1DB954; }
+
+.calm { background-color: #1DB954; }
+
+.angry { background-color: #1DB954; }
+
+.random { background-color: #1DB954; }
+
+
+
+#player {
+
+    margin: 2rem auto;
+
+    max-width: 600px;
+
+}
+
+
+
+.bug-report {
+
+    position: absolute;
+
+    bottom: 1rem;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 0.8rem;
+
+    color: #666;
+
+    text-decoration: none;
+
+    transition: color 0.3s;
+
+}
+
+
+
+.bug-report:hover {
+
+    color: #29e451;
+
+    text-decoration: underline;
+
+}
+
+
+
+.form-container {
+
+    background: rgba(255, 255, 255, 0.1);
+
+    padding: 1rem;
+
+    border-radius: 10px;
+
+    margin: 2rem auto;
+
+    max-width: 800px;
+
+}
+
+
+
+.form-container iframe {
+
+    border-radius: 8px;
+
+}
+
+
+
+/* Add these new styles for the regenerate button */
+
+.button-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+.regenerate-btn {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    background-color: #29e451;
+
+    border: none;
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+}
+
+
+
+.regenerate-btn:hover {
+
+    background-color: #1ed760;
+
+    transform: rotate(180deg);
+
+}
+
+
+
+.regenerate-btn i {
+
+    transition: transform 0.3s ease;
+
+}
+
+
+
+.regenerate-btn:active {
+
+    transform: scale(0.95) rotate(180deg);
+
+}
+
+
+
+/* Remove the margin from back-btn if needed */
+
+.back-btn {
+
+    margin: 0;
+
+}
+
+
+
+/* Update the random button style to match mood buttons */
+
+.random-btn {
+
+    display: none;
+
+}
+
+
+
+/* Add to your existing styles */
+
+.secret-input {
+
+    position: absolute;
+
+    bottom: 0.5rem;
+
+    right: 1rem;
+
+    width: 50px;
+
+    padding: 0.3rem;
+
+    border: none;
+
+    background: transparent;
+
+    color: #666;
+
+    font-size: 0.8rem;
+
+    text-align: center;
+
+}
+
+
+
+.secret-input::placeholder {
+
+    color: transparent;
+
+}
+
+
+
+.secret-input:focus {
+
+    outline: none;
+
+}
+
+
+
+/* Analytics styles */
+
+.analytics-container {
+
+    padding: 2rem;
+
+}
+
+
+
+.stats-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 2rem;
+
+    margin: 2rem 0;
+
+}
+
+
+
+.stat-box {
+
+    background: rgba(41, 228, 81, 0.1);
+
+    padding: 2rem;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+}
+
+
+
+.stat-box i {
+
+    font-size: 2.5rem;
+
+    color: #29e451;
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+.stat-box h2 {
+
+    font-size: 1.2rem;
+
+    margin-bottom: 1rem;
+
+    color: #333;
+
+}
+
+
+
+.stat-box p {
+
+    font-size: 2rem;
+
+    color: #29e451;
+
+    font-weight: bold;
+
+}
+
+
+
+.top-songs, .mood-stats {
+
+    background: rgba(255, 255, 255, 0.1);
+
+    padding: 2rem;
+
+    border-radius: 15px;
+
+    margin: 2rem 0;
+
+}
+
+
+
+.song-list {
+
+    display: grid;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+
+}
+
+
+
+.song-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 1rem;
+
+    background: rgba(41, 228, 81, 0.1);
+
+    border-radius: 10px;
+
+}
+
+
+
+.mood-distribution {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+
+}
+
+
+
+.mood-stat {
+
+    padding: 1rem;
+
+    background: rgba(41, 228, 81, 0.1);
+
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+
+
+/* Add login buttons styles */
+
+.login-buttons {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+    max-width: 300px;
+
+    margin: 0 auto;
+
+}
+
+
+
+.login-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    padding: 1rem 2rem;
+
+    font-size: 1.2rem;
+
+    border: none;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    color: white;
+
+    width: 100%;
+
+}
+
+
+
+.login-btn i {
+
+    font-size: 1.5rem;
+
+}
+
+
+
+.login-btn.spotify {
+
+    background-color: #1DB954;
+
+}
+
+
+
+.login-btn.spotify:hover {
+
+    background-color: #1ed760;
+
+}
